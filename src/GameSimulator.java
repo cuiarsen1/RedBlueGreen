@@ -5,7 +5,10 @@ public class GameSimulator {
 
 	public static void main(String[] args) {
 		
-		for (int j = 0; j < 5; j += 1)
+		int threeDrawnCount = 0;
+		int fiveDrawnCount = 0;
+		
+		for (int j = 0; j < 10; j += 1)
 		{
 			Random random = new Random();
 			
@@ -37,6 +40,11 @@ public class GameSimulator {
 			else if (drawRoll <= 14 && drawRoll >= 10)
 				drawNum = 5;
 			
+			if (drawNum == 3)
+				threeDrawnCount += 1;
+			else if (drawNum == 5)
+				fiveDrawnCount += 1;
+			
 			String s = "";
 			
 			int drawAvailable = 15;
@@ -55,6 +63,9 @@ public class GameSimulator {
 			
 			System.out.println(s);
 		}
+		
+		System.out.println("Number of times 3 cards drawn: " + threeDrawnCount);
+		System.out.println("Number of times 5 cards drawn: " + fiveDrawnCount);
 		
 	}
 
